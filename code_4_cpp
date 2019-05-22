@@ -1,0 +1,21 @@
+/* Лабораторная работа №4(С++), задача:
+В заданной строке заменить каждую русскую букву символом "*" */
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <regex>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	wstring s = L"Hello мир, it's я, да :)";
+	cout << "С русскими символами ";
+	wcout << "s = " << s << endl;
+	s = regex_replace(s, wregex(L"[а-я,А-Я]"), wstring(L"*"));
+	cout << "Без русских символов ";
+	wcout << "s = " << s << endl;
+	return 0;
+}
