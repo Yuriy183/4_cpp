@@ -9,13 +9,14 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+ setlocale(LC_ALL, "Russian");
 
-	wstring s = L"Hello мир, it's я, да :)";
-	cout << "С русскими символами ";
-	wcout << "s = " << s << endl;
-	s = regex_replace(s, wregex(L"[а-я,А-Я]"), wstring(L"*"));
-	cout << "Без русских символов ";
-	wcout << "s = " << s << endl;
-	return 0;
+ string s = "Hello мир, it's я, да";
+ cout << "С русскими символами ";
+ cout << "s = " << s << endl;
+ s = regex_replace(s, regex("[а-я,А-Я]"), string("*"));
+ cout << "Без русских символов ";
+ cout << "s = " << s << endl;
+
+ return 0;
 }
